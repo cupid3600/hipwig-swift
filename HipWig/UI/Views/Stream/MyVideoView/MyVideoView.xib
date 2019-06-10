@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyVideoView" customModule="HipWig" customModuleProvider="target">
+            <connections>
+                <outlet property="cameraToggleBtn" destination="obz-fG-aaK" id="KU8-Ow-B6O"/>
+                <outlet property="streamView" destination="hn3-CB-BQ3" id="tv2-Rn-VqY"/>
+                <outlet property="videoToggleBtn" destination="tvp-Wv-Zaa" id="9dR-bv-sr6"/>
+                <outlet property="viewHeight" destination="vV7-FR-ALa" id="BTY-xv-Lzi"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="121" height="128"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="754" verticalCompressionResistancePriority="754" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvp-Wv-Zaa">
+                    <rect key="frame" x="0.0" y="96" width="121" height="32"/>
+                    <color key="backgroundColor" red="0.41656929250000002" green="0.93838202950000005" blue="0.8135809302" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="Bf5-85-4hr"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
+                    <state key="normal">
+                        <color key="titleColor" red="0.1647058824" green="0.18039215689999999" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="autoLocalize" value="NO"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="videoToggleDidPressedWithSender:" destination="-1" eventType="touchUpInside" id="NCF-EX-o5o"/>
+                    </connections>
+                </button>
+                <view clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="754" verticalCompressionResistancePriority="754" translatesAutoresizingMaskIntoConstraints="NO" id="hn3-CB-BQ3">
+                    <rect key="frame" x="0.0" y="0.0" width="121" height="96"/>
+                    <color key="backgroundColor" red="0.1647058824" green="0.18039215689999999" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="96" id="vV7-FR-ALa"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="754" verticalCompressionResistancePriority="754" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obz-fG-aaK">
+                    <rect key="frame" x="0.0" y="0.0" width="121" height="96"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="96" id="ZS1-Jr-mRo"/>
+                        <constraint firstAttribute="width" constant="90" id="y56-ER-fKV"/>
+                    </constraints>
+                    <state key="normal" image="toggle_my_camera_icon"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="ZS1-Jr-mRo"/>
+                            <exclude reference="y56-ER-fKV"/>
+                        </mask>
+                    </variation>
+                    <connections>
+                        <action selector="cameraToggleDidPressed" destination="-1" eventType="touchUpInside" id="Q1e-h4-sR2"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.1647058824" green="0.18039215689999999" blue="0.26274509800000001" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="tvp-Wv-Zaa" secondAttribute="bottom" id="4Zn-c9-QAD"/>
+                <constraint firstItem="tvp-Wv-Zaa" firstAttribute="top" secondItem="hn3-CB-BQ3" secondAttribute="bottom" id="4li-iq-R8A"/>
+                <constraint firstItem="tvp-Wv-Zaa" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="bottom" id="PSm-Aq-L1l"/>
+                <constraint firstItem="obz-fG-aaK" firstAttribute="centerX" secondItem="hn3-CB-BQ3" secondAttribute="centerX" id="Pag-61-UJB"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="tvp-Wv-Zaa" secondAttribute="trailing" id="WDq-et-5zm"/>
+                <constraint firstItem="tvp-Wv-Zaa" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Ws4-K4-336"/>
+                <constraint firstItem="obz-fG-aaK" firstAttribute="height" secondItem="hn3-CB-BQ3" secondAttribute="height" id="gDw-MF-j4U"/>
+                <constraint firstItem="obz-fG-aaK" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="kCo-Vj-Cvo"/>
+                <constraint firstItem="obz-fG-aaK" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="pXc-mJ-fUX"/>
+                <constraint firstItem="hn3-CB-BQ3" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="qVz-e8-a5k"/>
+                <constraint firstItem="obz-fG-aaK" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="re5-FB-l5Q"/>
+                <constraint firstItem="hn3-CB-BQ3" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="x0k-Kb-eCk"/>
+                <constraint firstItem="obz-fG-aaK" firstAttribute="width" secondItem="hn3-CB-BQ3" secondAttribute="width" id="yot-vL-hQI"/>
+                <constraint firstItem="hn3-CB-BQ3" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="zdQ-TY-eVI"/>
+                <constraint firstItem="obz-fG-aaK" firstAttribute="centerY" secondItem="hn3-CB-BQ3" secondAttribute="centerY" id="zkP-VU-Gue"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="kCo-Vj-Cvo"/>
+                    <exclude reference="PSm-Aq-L1l"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="74.400000000000006" y="84.557721139430285"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="toggle_my_camera_icon" width="46" height="30"/>
+    </resources>
+</document>

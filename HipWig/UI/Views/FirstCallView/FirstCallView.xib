@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FirstCallView" customModule="HipWig" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="TJi-ft-FZV" customClass="FirstCallView" customModule="HipWig" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="266"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9kC-aL-NeD">
+                    <rect key="frame" x="24" y="45" width="327" height="211"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="753" text="YEA!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Be1-B9-O3U">
+                            <rect key="frame" x="147.5" y="20" width="32.5" height="22"/>
+                            <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tVu-Fz-jhL">
+                            <rect key="frame" x="293" y="20" width="14" height="22"/>
+                            <state key="normal" image="close_discount_popup"/>
+                            <connections>
+                                <action selector="closeDidSelectedWithSender:" destination="TJi-ft-FZV" eventType="touchUpInside" id="G0N-dT-e7V"/>
+                            </connections>
+                        </button>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fist_call_crone" translatesAutoresizingMaskIntoConstraints="NO" id="Mg9-8f-y06">
+                            <rect key="frame" x="144.5" y="62" width="38" height="38"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="38" id="mBr-35-8kB"/>
+                                <constraint firstAttribute="width" constant="38" id="yzY-cy-hrz"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make your first call or chat now!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oyv-GM-DwD">
+                            <rect key="frame" x="42" y="165.5" width="243" height="20.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.27424290779999999" green="0.29487788679999999" blue="0.3803921569" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstItem="Be1-B9-O3U" firstAttribute="centerX" secondItem="9kC-aL-NeD" secondAttribute="centerX" id="01F-RJ-XaW"/>
+                        <constraint firstItem="Oyv-GM-DwD" firstAttribute="centerX" secondItem="9kC-aL-NeD" secondAttribute="centerX" id="3ap-NP-wp2"/>
+                        <constraint firstItem="Oyv-GM-DwD" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Mg9-8f-y06" secondAttribute="bottom" id="3sE-ha-Zua"/>
+                        <constraint firstItem="tVu-Fz-jhL" firstAttribute="centerY" secondItem="Be1-B9-O3U" secondAttribute="centerY" id="6xh-sP-HE4"/>
+                        <constraint firstItem="Be1-B9-O3U" firstAttribute="top" secondItem="9kC-aL-NeD" secondAttribute="top" constant="20" id="BXj-ft-jMf"/>
+                        <constraint firstItem="Mg9-8f-y06" firstAttribute="top" secondItem="Be1-B9-O3U" secondAttribute="bottom" priority="800" constant="20" id="FUA-LA-X1S"/>
+                        <constraint firstAttribute="trailing" secondItem="tVu-Fz-jhL" secondAttribute="trailing" constant="20" id="M50-C0-hiP"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Oyv-GM-DwD" secondAttribute="trailing" constant="5" id="NPW-AD-hUg"/>
+                        <constraint firstItem="Mg9-8f-y06" firstAttribute="centerX" secondItem="9kC-aL-NeD" secondAttribute="centerX" id="ejL-Kv-FCu"/>
+                        <constraint firstItem="Oyv-GM-DwD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9kC-aL-NeD" secondAttribute="leading" constant="5" id="jFe-h8-tBp"/>
+                        <constraint firstAttribute="bottom" secondItem="Oyv-GM-DwD" secondAttribute="bottom" constant="25" id="wCP-x3-QAF"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="CTM-ls-OC7" firstAttribute="bottom" secondItem="9kC-aL-NeD" secondAttribute="bottom" constant="10" id="JTE-5a-sNZ"/>
+                <constraint firstItem="9kC-aL-NeD" firstAttribute="top" secondItem="CTM-ls-OC7" secondAttribute="top" constant="45" id="Rck-Ix-gRk"/>
+                <constraint firstItem="CTM-ls-OC7" firstAttribute="trailing" secondItem="9kC-aL-NeD" secondAttribute="trailing" constant="24" id="TqX-bq-cff"/>
+                <constraint firstItem="9kC-aL-NeD" firstAttribute="leading" secondItem="CTM-ls-OC7" secondAttribute="leading" constant="24" id="ccD-lV-e40"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="CTM-ls-OC7"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="8"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="containerView" destination="9kC-aL-NeD" id="8cJ-hb-SjK"/>
+                <outlet property="fistCallTextLabel" destination="Oyv-GM-DwD" id="TyF-Dm-KPj"/>
+                <outlet property="yeaTextLabel" destination="Be1-B9-O3U" id="LFX-me-toN"/>
+            </connections>
+            <point key="canvasLocation" x="192.80000000000001" y="258.17091454272867"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="close_discount_popup" width="14" height="14"/>
+        <image name="fist_call_crone" width="38" height="38"/>
+    </resources>
+</document>

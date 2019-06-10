@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="lqV-Zn-oNq" customClass="IncomingCallBannerView" customModule="HipWig" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="753" text="                    " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="quL-1d-2Oq">
+                    <rect key="frame" x="99" y="-3" width="83.5" height="22"/>
+                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g5E-zv-kMi">
+                    <rect key="frame" x="20" y="0.0" width="65" height="65"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="g5E-zv-kMi" secondAttribute="height" multiplier="1:1" id="nCs-8Q-ogu"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="753" text="      " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NuW-m4-O8B">
+                    <rect key="frame" x="99" y="19" width="19" height="16.5"/>
+                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.20784313730000001" green="0.2274509804" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="NuW-m4-O8B" firstAttribute="top" secondItem="quL-1d-2Oq" secondAttribute="bottom" id="1IG-mk-TKY"/>
+                <constraint firstItem="quL-1d-2Oq" firstAttribute="leading" secondItem="g5E-zv-kMi" secondAttribute="trailing" constant="14" id="5Jo-JU-fyJ"/>
+                <constraint firstItem="Dvz-Ck-KjG" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="NuW-m4-O8B" secondAttribute="trailing" constant="20" id="D0s-yJ-hgf"/>
+                <constraint firstItem="quL-1d-2Oq" firstAttribute="top" secondItem="g5E-zv-kMi" secondAttribute="top" constant="-3" id="J5t-Uv-svi"/>
+                <constraint firstItem="NuW-m4-O8B" firstAttribute="leading" secondItem="quL-1d-2Oq" secondAttribute="leading" id="JuO-Zn-BUQ"/>
+                <constraint firstItem="Dvz-Ck-KjG" firstAttribute="bottom" secondItem="g5E-zv-kMi" secondAttribute="bottom" constant="10" id="LgP-he-Pex"/>
+                <constraint firstItem="g5E-zv-kMi" firstAttribute="leading" secondItem="Dvz-Ck-KjG" secondAttribute="leading" constant="20" id="aQf-Vn-4V6"/>
+                <constraint firstItem="Dvz-Ck-KjG" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="quL-1d-2Oq" secondAttribute="trailing" constant="20" id="fe0-Cy-8oz"/>
+                <constraint firstItem="g5E-zv-kMi" firstAttribute="top" secondItem="Dvz-Ck-KjG" secondAttribute="top" id="xrT-Qt-MRE"/>
+                <constraint firstItem="Dvz-Ck-KjG" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="NuW-m4-O8B" secondAttribute="bottom" id="yet-Cg-vQU"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="Dvz-Ck-KjG"/>
+            <connections>
+                <outlet property="messageLabel" destination="NuW-m4-O8B" id="xTO-uR-TFP"/>
+                <outlet property="userAvatarImageView" destination="g5E-zv-kMi" id="3oV-OI-k6F"/>
+                <outlet property="userNameLabel" destination="quL-1d-2Oq" id="8iI-ps-9K5"/>
+            </connections>
+            <point key="canvasLocation" x="156" y="191.1544227886057"/>
+        </view>
+    </objects>
+</document>

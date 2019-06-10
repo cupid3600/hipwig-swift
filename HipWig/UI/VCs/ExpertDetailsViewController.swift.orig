@@ -1,0 +1,296 @@
+//
+//  ExpertDetailsViewController.swift
+//  HipWig
+//
+//  Created by Alexey on 1/20/19.
+//  Copyright © 2019 HipWig. All rights reserved.
+//
+
+import UIKit
+import Alamofire
+import AlamofireImage
+import AVFoundation
+import SVProgressHUD
+
+private struct ExpertDetailsFeatureFlags {
+    
+    let expertCallEnabled: Bool
+    let expertChatEnabled: Bool
+    let soundEnabled: Bool
+    let expertVideoEnabled: Bool
+    
+    static var `default`: ExpertDetailsFeatureFlags {
+        return ExpertDetailsFeatureFlags(expertCallEnabled: false, expertChatEnabled: false, soundEnabled: false, expertVideoEnabled: false)
+    }
+}
+
+class ExpertDetailsViewController: BaseViewController {
+
+    //MARK: - Outlets -
+    @IBOutlet private var expertImage: UIImageView!
+    @IBOutlet private var expertName: UILabel!
+    @IBOutlet private var callButton: UIButton!
+    @IBOutlet private var messageButton: UIButton!
+    @IBOutlet private var unblockButton: UIButton!
+    @IBOutlet private var infoView: ProfileInfoView!
+    @IBOutlet private var expertListView: ProfileExpertListView!
+    @IBOutlet private var audioToggleButton: UIButton!
+    @IBOutlet private var contentScrollView: UIScrollView!
+    @IBOutlet private var muteAudioView: UIView!
+    
+    //MARK: - Properties -
+    public var experts: [User] = []
+    public var expert: User!
+    
+    private var player: AVPlayer?
+    private var videoLayer: AVPlayerLayer?
+    private var shouldPlayVideo: Bool = true
+    private var flags: ExpertDetailsFeatureFlags = .default
+    private var firstCallView: FirstCallView?
+    
+    //MARK: - Life Cycle -
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.unsubscribeFromPlayerEvents()
+        self.destroyVideoPlayer()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        self.createVideoPlayer(user: self.expert)
+
+        
+        //FIXME: remove later
+<<<<<<< Updated upstream
+//        FirstCallView.show(source: self.infoView)
+=======
+        self.firstCallView?.close()
+        if !UserDefaults.standard.bool(forKey: "kProductPopupsShowed") {
+            firstCallView = FirstCallView.show(source: self.infoView)
+        }
+>>>>>>> Stashed changes
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        self.unblockButton.layer.cornerRadius = 8
+        self.unblockButton.isHidden = true
+        self.callButton.layer.cornerRadius = 8
+        self.messageButton.layer.cornerRadius = 8
+        self.muteAudioView.backgroundColor = UIColor(red: 42, green: 46, blue: 67).withAlphaComponent(0.5)
+        
+        if #available(iOS 11.0, *) {
+            self.contentScrollView.contentInsetAdjustmentBehavior = .never
+        } else {
+            self.automaticallyAdjustsScrollViewInsets = false
+        }
+
+        self.loadData()
+        
+        self.expertListView.setup(experts: self.experts, currentID: self.expert.id)
+        self.expertListView.delegate = self
+        
+        let category = ExpertDetailsFeatureFlagCategoryImplementation()
+        self.featureFlagsService.fetchFlags(for: category) { [weak self] in
+            guard let `self` = self else { return }
+            
+            self.flags = ExpertDetailsFeatureFlags(expertCallEnabled: category.expertCallEnabled,
+                                                   expertChatEnabled: category.expertChatEnabled,
+                                                   soundEnabled: category.soundEnabled,
+                                                   expertVideoEnabled: category.expertVideoEnabled)
+            self.reloadView(with: self.flags)
+        } 
+    }
+    
+    //MARK: - Private -
+    private func subscribeForPlayerEvents() {
+        NotificationCenter.addItemDidPlayToEndTimeObserver(self.player!.currentItem) { [weak self] item in
+            guard let `self` = self else { return }
+            
+            if self.player?.currentItem == item && self.shouldPlayVideo {
+                self.player?.seek(to: .zero)
+                self.player?.play()
+            }
+        }
+    }
+    
+    private func unsubscribeFromPlayerEvents() {
+        NotificationCenter.default.removeObserver(self)
+    }
+
+    private func loadData() {
+        self.expertName.text = ""
+        self.expertImage.image = nil
+        self.infoView.setEmptyData()
+
+        self.videoLayer?.removeFromSuperlayer()
+        self.player?.pause()
+        self.player?.isMuted = true
+        
+        self.updateUI(user: self.expert)
+        self.fetchExpert(with: self.expert.id) {
+            self.updateUI(user: self.expert)
+            self.reloadView(with: self.flags)
+        }
+    }
+
+    private func reloadView(with flags: ExpertDetailsFeatureFlags) {
+        if self.expert.youBlocked {
+            self.callButton.isHidden = !flags.expertCallEnabled
+            self.messageButton.isHidden = !flags.expertChatEnabled
+        } else {
+            self.callButton.isHidden = false
+            self.messageButton.isHidden = false
+        }
+
+        self.unblockButton.isHidden = !self.expert.youBlocked
+
+        self.audioToggleButton.isSelected = !flags.soundEnabled
+        self.shouldPlayVideo = flags.expertVideoEnabled
+
+        if self.shouldPlayVideo {
+            self.videoLayer = AVPlayerLayer(player: self.player)
+            self.videoLayer!.frame = self.expertImage.bounds
+            self.expertImage.layer.addSublayer(self.videoLayer!)
+            self.player?.play()
+        } else {
+            self.videoLayer?.removeFromSuperlayer()
+            self.videoLayer = nil
+            self.player?.pause()
+        }
+
+        self.setup(muteButton: self.audioToggleButton)
+    }
+    
+    private func fetchExpert(with id: String, completion: @escaping () -> Void) {
+        SVProgressHUD.show()
+        RequestsManager.manager.fetchUser(id: id) { result in
+            SVProgressHUD.dismiss()
+            
+            switch result {
+            case .success(let user):
+                self.expert = user
+                completion()
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+
+    private func updateUI(user: User) {
+        self.expertName.text = user.name
+        self.infoView.setup(user: user)
+    }
+
+    private func createVideoPlayer(user: User) {
+        VideosProvider.provider.videoThumb(user: user) { [weak self] image, _ in
+            self?.expertImage.image = image
+        }
+
+        VideosProvider.provider.videoFile(videoURL: user.expert?.profileVideo) { [weak self] videoUrl in
+            guard let `self` = self, let videoUrl = videoUrl else { return }
+
+            let item = AVPlayerItem(url: videoUrl)
+            self.player = AVPlayer(playerItem: item)
+
+            self.videoLayer = AVPlayerLayer(player: self.player)
+            self.videoLayer!.frame = self.expertImage.bounds
+            self.expertImage.layer.addSublayer(self.videoLayer!)
+            self.videoLayer!.videoGravity = AVLayerVideoGravity.resizeAspectFill
+            
+            self.player?.play()
+
+            self.setup(muteButton: self.audioToggleButton)
+            self.player?.isMuted = self.audioToggleButton.isSelected
+
+            self.expertImage.alpha = 0.0
+            UIView.animate(withDuration: 0.25) {
+                self.expertImage.alpha = 1.0
+            }
+
+            self.subscribeForPlayerEvents()
+        }
+    }
+
+    private func destroyVideoPlayer() {
+        self.videoLayer?.removeFromSuperlayer()
+        self.videoLayer = nil
+        self.player?.pause()
+        self.player = nil
+    }
+
+    private func setup(muteButton audioToggleButton: UIButton) {
+        if audioToggleButton.isSelected {
+            audioToggleButton.setTitle("expert_details.mute_button.unmute".localized, for: .normal)
+        } else {
+            audioToggleButton.setTitle("expert_details.mute_button.mute".localized, for: .normal)
+        }
+        
+        self.player?.isMuted = audioToggleButton.isSelected
+    }
+
+    //MARK: - Actions -
+    @IBAction private func messageButtonDidPressed() {
+        if UserDefaults.standard.bool(forKey: "kProductPopupsShowed") {
+            MainStoryboard.showConversation(from: self, with: self.expert)
+            AnalyticsManager.openChat(name: self.expert.name)
+            return
+        }
+
+        MainStoryboard.showBuySubscriptionScreen(from: self, backAction: { vc in
+            vc.dismiss(animated: true) {
+                MainStoryboard.showDiscountPopup()
+            }
+        }) { vc in
+            vc.dismiss(animated: true) {
+                UserDefaults.standard.set(true, forKey: "kProductPopupsShowed")
+                MainStoryboard.tabBarHidden = false
+
+                MainStoryboard.showConversation(from: self, with: self.expert)
+                AnalyticsManager.openChat(name: self.expert.name)
+            }
+        }
+    }
+
+    @IBAction private func callButtonDidPressed() {
+        if UserDefaults.standard.bool(forKey: "kProductPopupsShowed") {
+            MainStoryboard.showVideoChat(from: self, with: self.expert)
+            AnalyticsManager.openCall(name: self.expert.name)
+            return
+        }
+
+        MainStoryboard.showBuySubscriptionScreen(from: self, backAction: { vc in
+            vc.dismiss(animated: true) {
+                MainStoryboard.showDiscountPopup()
+            }
+        }) { vc in
+            vc.dismiss(animated: true) {
+                UserDefaults.standard.set(true, forKey: "kProductPopupsShowed")
+                MainStoryboard.tabBarHidden = false
+
+                MainStoryboard.showVideoChat(from: self, with: self.expert)
+                AnalyticsManager.openCall(name: self.expert.name)
+            }
+        }
+    }
+
+    @IBAction private func toggleAudioDidPressed() {
+        self.audioToggleButton.isSelected.toggle()
+        
+        self.setup(muteButton: self.audioToggleButton)
+        AnalyticsManager.profileTapMuteUnmute()
+    }
+    
+}
+
+//MARK: - ProfileExpertListViewDelegate
+extension ExpertDetailsViewController: ProfileExpertListViewDelegate {
+    
+    func onProfileChanged(newExpert: User) {
+        self.expert = newExpert
+        self.loadData()
+    }
+}

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </array>
+        <array key="SF-Pro-Display-Regular.otf">
+            <string>SFProDisplay-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileInfoView" customModule="HipWig" customModuleProvider="target">
+            <connections>
+                <outlet property="centerSkillView" destination="wy8-z7-7Fz" id="AwD-my-m7U"/>
+                <outlet property="collectionView" destination="1cu-DB-hAU" id="UeD-Cv-xEt"/>
+                <outlet property="contantStackView" destination="rVN-RQ-dAy" id="J9L-gt-Rev"/>
+                <outlet property="followersLabel" destination="ISj-tz-GFf" id="Vwn-0u-2xJ"/>
+                <outlet property="leftSkillView" destination="MhY-WO-aUq" id="juV-od-y9S"/>
+                <outlet property="loadingIndicatorView" destination="hTm-VW-NNC" id="HjI-Nn-EJh"/>
+                <outlet property="pagesControl" destination="CHJ-PD-0Ac" id="37U-Xv-pYH"/>
+                <outlet property="rightSkillView" destination="sdk-uh-GCm" id="6S1-bD-Trd"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="292"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="253" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="753" text="Expert in:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpQ-C3-xvF">
+                    <rect key="frame" x="156.5" y="10" width="62.5" height="37"/>
+                    <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
+                    <color key="textColor" white="1" alpha="0.4962542808219178" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="rVN-RQ-dAy">
+                    <rect key="frame" x="25" y="57" width="325" height="75"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MhY-WO-aUq" customClass="SkillView" customModule="HipWig" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="100.5" height="75"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wy8-z7-7Fz" customClass="SkillView" customModule="HipWig" customModuleProvider="target">
+                            <rect key="frame" x="112.5" y="0.0" width="100" height="75"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sdk-uh-GCm" customClass="SkillView" customModule="HipWig" customModuleProvider="target">
+                            <rect key="frame" x="224.5" y="0.0" width="100.5" height="75"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="75" id="PY7-ln-qiw"/>
+                    </constraints>
+                </stackView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="hTm-VW-NNC">
+                    <rect key="frame" x="177.5" y="84.5" width="20" height="20"/>
+                </activityIndicatorView>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="1cu-DB-hAU">
+                    <rect key="frame" x="24" y="144" width="327" height="92"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="92" id="eOx-pp-X4r"/>
+                    </constraints>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="E5P-TY-Vtp">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="FrS-af-BPv"/>
+                        <outlet property="delegate" destination="-1" id="9pZ-ic-6Gc"/>
+                    </connections>
+                </collectionView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="253" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="753" text="Followers:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISj-tz-GFf">
+                    <rect key="frame" x="150" y="256" width="75.5" height="16"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="16" id="vwL-Zh-wO1"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
+                    <color key="textColor" white="1" alpha="0.4962542808" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="CHJ-PD-0Ac">
+                    <rect key="frame" x="168" y="199" width="39" height="37"/>
+                </pageControl>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="1cu-DB-hAU" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="24" id="1gC-hb-brP"/>
+                <constraint firstItem="rVN-RQ-dAy" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="25" id="27S-Nm-emU"/>
+                <constraint firstItem="hTm-VW-NNC" firstAttribute="centerX" secondItem="rVN-RQ-dAy" secondAttribute="centerX" id="BeO-1D-89y"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ISj-tz-GFf" secondAttribute="bottom" constant="20" id="C3G-zO-yoK"/>
+                <constraint firstItem="CHJ-PD-0Ac" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Ixy-YO-weq"/>
+                <constraint firstItem="dpQ-C3-xvF" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="NWf-ht-Fqm"/>
+                <constraint firstItem="ISj-tz-GFf" firstAttribute="top" secondItem="1cu-DB-hAU" secondAttribute="bottom" constant="20" id="PSc-Ad-mVS"/>
+                <constraint firstItem="ISj-tz-GFf" firstAttribute="top" secondItem="CHJ-PD-0Ac" secondAttribute="bottom" constant="20" id="Prt-Ah-KtB"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="1cu-DB-hAU" secondAttribute="trailing" constant="24" id="Zzk-G2-aPP"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="rVN-RQ-dAy" secondAttribute="trailing" constant="25" id="e4s-SG-4pL"/>
+                <constraint firstItem="rVN-RQ-dAy" firstAttribute="top" secondItem="dpQ-C3-xvF" secondAttribute="bottom" constant="10" id="han-Sh-QsY"/>
+                <constraint firstItem="1cu-DB-hAU" firstAttribute="top" secondItem="rVN-RQ-dAy" secondAttribute="bottom" constant="12" id="lag-wg-ED7"/>
+                <constraint firstItem="ISj-tz-GFf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="mfo-r4-h9S"/>
+                <constraint firstItem="dpQ-C3-xvF" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="10" id="tPE-eh-6zf"/>
+                <constraint firstItem="hTm-VW-NNC" firstAttribute="centerY" secondItem="rVN-RQ-dAy" secondAttribute="centerY" id="vif-MF-hHP"/>
+                <constraint firstItem="dpQ-C3-xvF" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="x1i-Xm-JYC"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dpQ-C3-xvF" secondAttribute="trailing" constant="10" id="zLp-fk-e7u"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="130.40000000000001" y="355.32233883058473"/>
+        </view>
+    </objects>
+</document>

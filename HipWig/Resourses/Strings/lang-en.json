@@ -1,0 +1,187 @@
+{
+    "expert_list":{
+        "title":"Advisors",
+        "filter":{
+            "gender":{
+                "man":"Men",
+                "woman":"Women"
+            },
+            "location":{
+                "local":"Local",
+                "world":"Anywhere"
+            },
+            "work_type":{
+                "advice":"Advice",
+                "talk":"Talk"
+            }
+        }
+    },
+    "chat_list":{
+        "title":"Chats"
+    },
+    "settings":{
+        "title":"Settings",
+        "logout_title":"Logout",
+        "notifications":"Notifications",
+        "update_plan":"Recharge Minutes",
+        "available_for_calls":"Available for calls",
+        "become_an_expert" : "Become an Advisor",
+        "email_customer_service" : "Contact Us",
+        "logout" : "Logout"
+    },
+    "log_in":{
+        "facebook":"LOGIN WITH FACEBOOK",
+        "google":"LOGIN WITH GOOGLE",
+        "instagram":"Instagram"
+    },
+    "expert_details":{
+        "mute_button":{
+            "mute":"Tap to mute",
+            "unmute":"Tap to unmute"
+        },
+        "chat_button_title":"Chat",
+        "call_button_title":"Call",
+        "expert_in":"Good at",
+        "unlock_button_title":"Unlock",
+        "unavaileble_to_call":"The call facility is not available for this Expert. Please try another expert",
+        "unavaileble_to_call_to_user": "Unavailable to make a call! User doesn't have anough minutes"
+    },
+    "subscription":{
+        "title":"Subscriptions",
+        "subscription_title":{
+            "weekly":"100+10",
+            "monthly":"300+45",
+            "quarterly":"500+100"
+        },
+        "subscription_features":{
+            "counselor":"Talk to an Advisor Anywhere",
+            "messages":"24/7 Chat Messages",
+            "video_call":"Live-Video Advisor",
+            "superstar_counselor":"24/7 Access to Trusted Advisors"
+        },
+        "subscription_common_texts":{
+            "join":"Join and smile more with HipWig!"
+        }
+    },
+    "first_call":{
+        "yea":"Let's rock!",
+        "description":"Make your First Call \nor Chat Now!"
+    },
+    
+    "photo_library" : {
+        "title" : "Choose title",
+        "camera_title" : "Camera",
+        "proto_library" : "Photo library"
+    },
+    
+    "chat" : {
+        "call_button_title" : "Call",
+        "type_message_placeholder" : "I'm ready to go!",
+        "blocked_chat_awailable_to_unblock" : "Unblock this user to Call or Chat",
+        "blocked_chat_unawailable_to_unblock" : "You're currently blocked by this Advisor",
+        "blocked_chat" : "Block",
+        "unblock_chat" : "Unblock",
+        "delete_chat" : "Delete",
+        "block_chat_error" : "Chat isn't blocked. Try again."
+        "unblock_chat_error" : "Chat isn't unblocked. Try again."
+        "delete_chat_error" : "Chat isn't deleted. Try again."
+    },
+    "become_an_expert":{
+        "start_become_expert":{
+            "title":"Become an Advisor",
+            "description":"Make $$$ by helping others! With HipWig you’ll make money by answering video calls from people who are interested to talk and receive advice from real people around the world.",
+            "start_button_title":"Join"
+        },
+        "images":{
+            "title":"Images",
+            "connect_to_instagram_button_title":"Connect to Instagram",
+            "disconnected_description":"Will allow you to import a profile picture",
+            "connected_description":"Let yourself shine! \nRecord a Profile Video and introduce yourself.",
+            "connected_to_instagram_button_title":"Instagram account connected",
+            "profile_video":"Profile Video",
+            "change_photo":"Change Photo"
+        },
+        "payPal":{
+            "title":"PayPal",
+            "requirements_description":"Enter your PayPayl account to receive payments:",
+            "paypal_description":"HipWig pays Advisors via PayPal",
+            "email_placeholder":"PayPal Email Address"
+        },
+        "expertis":{
+            "title":"Expertise",
+            "enable_location_title":"Enable location",
+            "selected_directions": "% of % selected",
+            "please_select_directions":"Please select 3 directions",
+            "publish_profile_title":"Publish profile",
+            "denied_location_description":"Please enable location in device settings"
+        },
+        "record_video":{
+            "title":"Record a profile video",
+            "keep_button_title":"Keep",
+            "record_time":"% sec",
+            "click_and_hold_record_title":"Click and hold to record",
+            "min_clip_time":"Min. duration is 15 sec"
+        }
+    },
+    "common":{
+        "ok":"OK",
+        "warning":"Warning",
+        "cancel": "Cancel",
+        "enable_video":"Please enable permissions for video/audio recording in application settings"
+    },
+    "tab_bar":{
+        "profile":"Profile",
+        "chats":"Chats",
+        "settings":"Settings",
+        "experts":"Advisors"
+    },
+    "expert_profile":{
+        "title":"My profile",
+        "clients_title":"Clients",
+        "erning_this_month_title":"Earnings this month",
+        "erning_total":"Total Earnings",
+        "notification_title":"Notifications",
+        "available_for_calls_title":"Available for Calls",
+        "public_title":"Public"
+    },
+    "start_call": {
+        "try_another_expert" : "Try another Advisor",
+        "try_another_client" : "Try another Client",
+        "calling_text" : "Calling",
+        "no_answer" : "No Answer",
+        "call_me_back" : "Call me Back",
+        "call_me_back_message" : "Hi, tried calling, can you please call back?"
+    },
+    "select_instagram_photos":{
+        "title":" Select a Profile Picture"
+    },
+    "login":{
+        "logo":"HipWig",
+        "description":"Get advice from trusted Advisors via \nLive-Video and Chat",
+        "continue_with_google":"Continue with Google",
+        "continue_with_facebook":"Continue with Facebook",
+        "continue_with_instagram":"Continue with Instagram",
+        "privacy_and_terms_text":"By continuing, you agree to Terms of Service \nand Privacy Policy",
+        "terms_text":"Terms of Service",
+        "policy_text":"Privacy Policy"
+    },
+    "add_call_credits": {
+        "title" : "Add call credits",
+        "details": "Call is paused. Please wait while user buy some credit minutes",
+        "cancel_title": "NO THANKS",
+        "purchse": "GET CALL CREDITS",
+        "paused": "Call paused"
+    },
+    "discount": {
+        "discount_price_text" : "50% \n\nDiscount",
+        "let_us_offer_you_text" : "Let us offer you",
+        "please_dont_go_text" : "Please don’t go!",
+        "for_first_month_text": "for the first month",
+        "purchase_monthly_plan": "Purchase monthly plan"
+    },
+    "stream" : {
+        "camera_is_on" : "Camera is On",
+        "camera_is_off" : "Camera is Off",
+        "paused_call_title" : "Call paused"
+    }
+}

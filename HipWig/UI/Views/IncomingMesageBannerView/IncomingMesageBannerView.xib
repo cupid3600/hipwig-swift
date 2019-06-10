@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="ryv-qm-gB8" customClass="IncomingMesageBannerView" customModule="HipWig" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="75"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="753" text="                    " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4CC-1b-4eS">
+                    <rect key="frame" x="99" y="-3" width="83.5" height="22"/>
+                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LEI-RK-lrw">
+                    <rect key="frame" x="20" y="0.0" width="65" height="65"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="LEI-RK-lrw" secondAttribute="height" multiplier="1:1" id="IVS-u6-aI1"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="top" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="753" verticalCompressionResistancePriority="753" text="      " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RCT-Gl-Uem">
+                    <rect key="frame" x="99" y="19" width="19" height="16.5"/>
+                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.20784313730000001" green="0.2274509804" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="A92-of-440" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="RCT-Gl-Uem" secondAttribute="trailing" constant="20" id="DeS-mu-fh5"/>
+                <constraint firstItem="4CC-1b-4eS" firstAttribute="leading" secondItem="LEI-RK-lrw" secondAttribute="trailing" constant="14" id="JlB-U3-Shj"/>
+                <constraint firstItem="A92-of-440" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="RCT-Gl-Uem" secondAttribute="bottom" id="NIR-Wp-waU"/>
+                <constraint firstItem="4CC-1b-4eS" firstAttribute="top" secondItem="LEI-RK-lrw" secondAttribute="top" constant="-3" id="O7e-TP-KlS"/>
+                <constraint firstItem="LEI-RK-lrw" firstAttribute="leading" secondItem="A92-of-440" secondAttribute="leading" constant="20" id="RhL-ya-w8r"/>
+                <constraint firstItem="A92-of-440" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4CC-1b-4eS" secondAttribute="trailing" constant="20" id="Txa-Re-Mjv"/>
+                <constraint firstItem="RCT-Gl-Uem" firstAttribute="top" secondItem="4CC-1b-4eS" secondAttribute="bottom" id="aeD-Id-cpF"/>
+                <constraint firstItem="LEI-RK-lrw" firstAttribute="top" secondItem="A92-of-440" secondAttribute="top" id="dwX-1x-okl"/>
+                <constraint firstItem="A92-of-440" firstAttribute="bottom" secondItem="LEI-RK-lrw" secondAttribute="bottom" constant="10" id="kCf-9Z-QH8"/>
+                <constraint firstItem="RCT-Gl-Uem" firstAttribute="leading" secondItem="4CC-1b-4eS" secondAttribute="leading" id="ljg-j6-gPD"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="A92-of-440"/>
+            <connections>
+                <outlet property="messageLabel" destination="RCT-Gl-Uem" id="zA4-f7-LSC"/>
+                <outlet property="userAvatarImageView" destination="LEI-RK-lrw" id="99d-ZB-K9E"/>
+                <outlet property="userNameLabel" destination="4CC-1b-4eS" id="eT4-oU-IUJ"/>
+            </connections>
+            <point key="canvasLocation" x="156" y="191.1544227886057"/>
+        </view>
+    </objects>
+</document>

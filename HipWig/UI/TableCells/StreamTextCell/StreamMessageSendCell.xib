@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Light.ttf">
+            <string>OpenSans-Light</string>
+        </array>
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="95" id="Iec-Fq-v2r" customClass="StreamMessageSendCell" customModule="HipWig" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="95"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Iec-Fq-v2r" id="cS6-pE-oTA">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="94.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AZZ-Tg-ku9">
+                        <rect key="frame" x="158" y="6" width="138" height="82.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="              " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFu-g9-iVC">
+                                <rect key="frame" x="82" y="61" width="44" height="16.5"/>
+                                <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="12"/>
+                                <color key="textColor" red="0.58431372550000005" green="0.61568627450000002" blue="0.67843137249999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.13725490200000001" green="0.14901960780000001" blue="0.21960784310000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="DFu-g9-iVC" secondAttribute="bottom" constant="5" id="GgT-Lk-zLr"/>
+                            <constraint firstItem="DFu-g9-iVC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="AZZ-Tg-ku9" secondAttribute="leading" constant="22" id="nmZ-dE-HcS"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="12"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUi-1m-0CT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="94.5"/>
+                        <connections>
+                            <action selector="cellDidSelect:" destination="Iec-Fq-v2r" eventType="touchUpInside" id="UsB-Os-w26"/>
+                        </connections>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="                         " textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tr6-9E-KDX" customClass="ActiveLabel" customModule="ActiveLabel">
+                        <rect key="frame" x="180" y="12" width="104" height="22"/>
+                        <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="16"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="AZZ-Tg-ku9" firstAttribute="top" secondItem="tr6-9E-KDX" secondAttribute="top" constant="-6" id="5lc-lI-8ec"/>
+                    <constraint firstItem="DFu-g9-iVC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="tr6-9E-KDX" secondAttribute="bottom" constant="5" id="7CX-cY-WTb"/>
+                    <constraint firstItem="VUi-1m-0CT" firstAttribute="centerY" secondItem="cS6-pE-oTA" secondAttribute="centerY" id="9YT-wz-U0f"/>
+                    <constraint firstItem="AZZ-Tg-ku9" firstAttribute="top" secondItem="cS6-pE-oTA" secondAttribute="top" constant="6" id="CcD-ID-hDn"/>
+                    <constraint firstItem="VUi-1m-0CT" firstAttribute="centerX" secondItem="cS6-pE-oTA" secondAttribute="centerX" id="DRb-H4-JtB"/>
+                    <constraint firstItem="tr6-9E-KDX" firstAttribute="leading" secondItem="AZZ-Tg-ku9" secondAttribute="leading" constant="22" id="H2h-Ni-Dxw"/>
+                    <constraint firstAttribute="bottom" secondItem="AZZ-Tg-ku9" secondAttribute="bottom" constant="6" id="Jhj-ht-hyW"/>
+                    <constraint firstAttribute="bottom" secondItem="tr6-9E-KDX" secondAttribute="bottom" constant="8" id="K3T-V6-1kz"/>
+                    <constraint firstItem="VUi-1m-0CT" firstAttribute="width" secondItem="cS6-pE-oTA" secondAttribute="width" id="Px1-BQ-YMX"/>
+                    <constraint firstAttribute="trailing" secondItem="AZZ-Tg-ku9" secondAttribute="trailing" constant="24" id="RBS-2J-uHv"/>
+                    <constraint firstItem="AZZ-Tg-ku9" firstAttribute="trailing" secondItem="tr6-9E-KDX" secondAttribute="trailing" constant="12" id="Xss-Jd-2CL"/>
+                    <constraint firstItem="tr6-9E-KDX" firstAttribute="top" secondItem="cS6-pE-oTA" secondAttribute="top" constant="8" id="cte-ap-alA"/>
+                    <constraint firstItem="DFu-g9-iVC" firstAttribute="trailing" secondItem="tr6-9E-KDX" secondAttribute="trailing" id="hnM-4d-RJh"/>
+                    <constraint firstItem="AZZ-Tg-ku9" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cS6-pE-oTA" secondAttribute="leading" constant="24" id="oUs-Lg-Wwt"/>
+                    <constraint firstItem="VUi-1m-0CT" firstAttribute="height" secondItem="cS6-pE-oTA" secondAttribute="height" id="sHO-zq-IGd"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="K3T-V6-1kz"/>
+                        <exclude reference="cte-ap-alA"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="jzH-d5-8CJ"/>
+            <connections>
+                <outlet property="dateLabel" destination="DFu-g9-iVC" id="hNI-J2-E2i"/>
+                <outlet property="messageContainer" destination="AZZ-Tg-ku9" id="60U-Tt-0aE"/>
+                <outlet property="messageLabel" destination="tr6-9E-KDX" id="oOJ-vc-VNy"/>
+            </connections>
+            <point key="canvasLocation" x="65.599999999999994" y="67.916041979010501"/>
+        </tableViewCell>
+    </objects>
+</document>

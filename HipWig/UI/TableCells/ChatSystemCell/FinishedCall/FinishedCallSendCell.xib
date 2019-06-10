@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Light.ttf">
+            <string>OpenSans-Light</string>
+        </array>
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="67" id="q5A-vu-Tpp" customClass="FinishedCallSendCell" customModule="HipWig" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="67"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q5A-vu-Tpp" id="dD7-r7-MPP">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="66.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="call_finished" translatesAutoresizingMaskIntoConstraints="NO" id="GH5-hY-yry">
+                        <rect key="frame" x="271" y="21" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="7dc-Bg-688"/>
+                            <constraint firstAttribute="height" constant="25" id="xwl-Kr-3Ez"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="        " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rww-NW-GTY">
+                        <rect key="frame" x="231" y="15" width="25" height="16.5"/>
+                        <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
+                        <color key="textColor" red="0.58431372550000005" green="0.61568627450000002" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="       " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DbT-aD-xDD">
+                        <rect key="frame" x="234" y="45" width="22" height="16.5"/>
+                        <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="DbT-aD-xDD" secondAttribute="bottom" constant="5" id="4pH-kM-tkX"/>
+                    <constraint firstItem="Rww-NW-GTY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dD7-r7-MPP" secondAttribute="leading" constant="15" id="9xJ-Cq-wD5"/>
+                    <constraint firstItem="GH5-hY-yry" firstAttribute="leading" secondItem="Rww-NW-GTY" secondAttribute="trailing" constant="15" id="D3D-oq-Gjz"/>
+                    <constraint firstItem="DbT-aD-xDD" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Rww-NW-GTY" secondAttribute="bottom" constant="5" id="PaS-yB-Brf"/>
+                    <constraint firstItem="Rww-NW-GTY" firstAttribute="top" secondItem="dD7-r7-MPP" secondAttribute="top" constant="15" id="VKp-GF-vjL"/>
+                    <constraint firstItem="DbT-aD-xDD" firstAttribute="trailing" secondItem="Rww-NW-GTY" secondAttribute="trailing" id="cZt-CB-h3h"/>
+                    <constraint firstAttribute="trailing" secondItem="GH5-hY-yry" secondAttribute="trailing" constant="24" id="rOo-Ej-97W"/>
+                    <constraint firstItem="GH5-hY-yry" firstAttribute="centerY" secondItem="dD7-r7-MPP" secondAttribute="centerY" id="vTe-y2-Vjk"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="2HP-sB-yU3"/>
+            <connections>
+                <outlet property="dateLabel" destination="DbT-aD-xDD" id="ZU3-0w-1hS"/>
+                <outlet property="detailsLabel" destination="Rww-NW-GTY" id="Z2M-3b-KxQ"/>
+                <outlet property="iconView" destination="GH5-hY-yry" id="5Cr-G3-rEa"/>
+            </connections>
+            <point key="canvasLocation" x="52.799999999999997" y="58.920539730134934"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="call_finished" width="35" height="33"/>
+    </resources>
+</document>

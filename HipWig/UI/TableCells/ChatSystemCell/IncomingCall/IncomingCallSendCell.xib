@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Light.ttf">
+            <string>OpenSans-Light</string>
+        </array>
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="67" id="At2-ZG-jBm" customClass="IncomingCallSendCell" customModule="HipWig" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="67"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="At2-ZG-jBm" id="ZaQ-va-mky">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="66.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="un_answered_call" translatesAutoresizingMaskIntoConstraints="NO" id="C95-Qa-gpo">
+                        <rect key="frame" x="271" y="21" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="dQE-x3-Miq"/>
+                            <constraint firstAttribute="height" constant="25" id="sBN-Co-rv1"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="        " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLo-fa-tPc">
+                        <rect key="frame" x="231" y="15" width="25" height="16.5"/>
+                        <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
+                        <color key="textColor" red="0.58431372550000005" green="0.61568627450000002" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="       " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MeD-ea-kjh">
+                        <rect key="frame" x="234" y="45" width="22" height="16.5"/>
+                        <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="MeD-ea-kjh" secondAttribute="bottom" constant="5" id="JmE-Tq-nWs"/>
+                    <constraint firstItem="C95-Qa-gpo" firstAttribute="leading" secondItem="wLo-fa-tPc" secondAttribute="trailing" constant="15" id="Qa4-nc-bRd"/>
+                    <constraint firstItem="MeD-ea-kjh" firstAttribute="top" relation="greaterThanOrEqual" secondItem="wLo-fa-tPc" secondAttribute="bottom" constant="5" id="aUz-ZN-F7g"/>
+                    <constraint firstItem="C95-Qa-gpo" firstAttribute="centerY" secondItem="ZaQ-va-mky" secondAttribute="centerY" id="cth-Cr-emn"/>
+                    <constraint firstAttribute="trailing" secondItem="C95-Qa-gpo" secondAttribute="trailing" constant="24" id="nHI-Im-tik"/>
+                    <constraint firstItem="wLo-fa-tPc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZaQ-va-mky" secondAttribute="leading" constant="15" id="pMG-dE-qSL"/>
+                    <constraint firstItem="wLo-fa-tPc" firstAttribute="top" secondItem="ZaQ-va-mky" secondAttribute="top" constant="15" id="tOd-TQ-Nlz"/>
+                    <constraint firstItem="MeD-ea-kjh" firstAttribute="trailing" secondItem="wLo-fa-tPc" secondAttribute="trailing" id="uvM-gB-ZQ6"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="dwI-dw-DLH"/>
+            <connections>
+                <outlet property="dateLabel" destination="MeD-ea-kjh" id="PGQ-n7-J0x"/>
+                <outlet property="detailsLabel" destination="wLo-fa-tPc" id="TzE-xS-43P"/>
+                <outlet property="iconView" destination="C95-Qa-gpo" id="fDu-jK-yPo"/>
+            </connections>
+            <point key="canvasLocation" x="52.799999999999997" y="58.920539730134934"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="un_answered_call" width="35" height="33"/>
+    </resources>
+</document>

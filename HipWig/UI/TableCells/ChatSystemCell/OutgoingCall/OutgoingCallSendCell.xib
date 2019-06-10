@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Light.ttf">
+            <string>OpenSans-Light</string>
+        </array>
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="67" id="Hd1-GQ-Eh6" customClass="OutgoingCallSendCell" customModule="HipWig" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="67"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hd1-GQ-Eh6" id="iCp-HZ-C7j">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="66.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="un_answered_call" translatesAutoresizingMaskIntoConstraints="NO" id="sCz-3B-LGU">
+                        <rect key="frame" x="271" y="21" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="25" id="6cU-mF-Vym"/>
+                            <constraint firstAttribute="width" constant="25" id="9d2-eE-Tku"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="        " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMV-Np-wT0">
+                        <rect key="frame" x="231" y="15" width="25" height="16.5"/>
+                        <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
+                        <color key="textColor" red="0.58431372550000005" green="0.61568627450000002" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="       " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hAg-wa-Std">
+                        <rect key="frame" x="234" y="45" width="22" height="16.5"/>
+                        <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="sCz-3B-LGU" secondAttribute="trailing" constant="24" id="84D-WI-fQg"/>
+                    <constraint firstItem="hAg-wa-Std" firstAttribute="trailing" secondItem="JMV-Np-wT0" secondAttribute="trailing" id="99u-sM-EOo"/>
+                    <constraint firstItem="hAg-wa-Std" firstAttribute="top" relation="greaterThanOrEqual" secondItem="JMV-Np-wT0" secondAttribute="bottom" constant="5" id="JMp-5k-gFp"/>
+                    <constraint firstItem="sCz-3B-LGU" firstAttribute="leading" secondItem="JMV-Np-wT0" secondAttribute="trailing" constant="15" id="LvB-bJ-xiT"/>
+                    <constraint firstItem="JMV-Np-wT0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iCp-HZ-C7j" secondAttribute="leading" constant="15" id="cNj-n0-Jhu"/>
+                    <constraint firstAttribute="bottom" secondItem="hAg-wa-Std" secondAttribute="bottom" constant="5" id="tVh-r0-2wK"/>
+                    <constraint firstItem="sCz-3B-LGU" firstAttribute="centerY" secondItem="iCp-HZ-C7j" secondAttribute="centerY" id="u1h-zu-ICJ"/>
+                    <constraint firstItem="JMV-Np-wT0" firstAttribute="top" secondItem="iCp-HZ-C7j" secondAttribute="top" constant="15" id="zAI-Mz-Pt2"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="EQX-Qh-Hfr"/>
+            <connections>
+                <outlet property="dateLabel" destination="hAg-wa-Std" id="iob-U3-rn6"/>
+                <outlet property="detailsLabel" destination="JMV-Np-wT0" id="IEJ-we-48D"/>
+                <outlet property="iconView" destination="sCz-3B-LGU" id="eDy-pW-fr9"/>
+            </connections>
+            <point key="canvasLocation" x="52.799999999999997" y="58.920539730134934"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="un_answered_call" width="35" height="33"/>
+    </resources>
+</document>

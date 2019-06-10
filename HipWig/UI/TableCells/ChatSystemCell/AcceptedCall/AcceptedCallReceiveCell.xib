@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Light.ttf">
+            <string>OpenSans-Light</string>
+        </array>
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="67" id="l9L-Z2-nal" customClass="AcceptedCallReceiveCell" customModule="HipWig" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="67"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l9L-Z2-nal" id="kbe-Ej-OqV">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="66.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="un_answered_call" translatesAutoresizingMaskIntoConstraints="NO" id="Ivg-r8-Bhv">
+                        <rect key="frame" x="25" y="21" width="25" height="25"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="25" id="McW-in-glM"/>
+                            <constraint firstAttribute="height" constant="25" id="xeK-6J-36j"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="          " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gor-5r-pPk">
+                        <rect key="frame" x="65" y="10" width="31" height="16.5"/>
+                        <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="12"/>
+                        <color key="textColor" red="0.58431372550000005" green="0.61568627450000002" blue="0.67843137249999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="       " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGR-Il-opD">
+                        <rect key="frame" x="65" y="45" width="22" height="16.5"/>
+                        <fontDescription key="fontDescription" name="OpenSans-Light" family="Open Sans" pointSize="12"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="GGR-Il-opD" firstAttribute="leading" secondItem="Gor-5r-pPk" secondAttribute="leading" id="10l-gl-uE6"/>
+                    <constraint firstAttribute="bottom" secondItem="GGR-Il-opD" secondAttribute="bottom" constant="5" id="6oc-sF-40o"/>
+                    <constraint firstItem="GGR-Il-opD" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Gor-5r-pPk" secondAttribute="bottom" constant="5" id="Jsw-un-l1d"/>
+                    <constraint firstItem="Gor-5r-pPk" firstAttribute="leading" secondItem="Ivg-r8-Bhv" secondAttribute="trailing" constant="15" id="aMg-RK-9AE"/>
+                    <constraint firstItem="Ivg-r8-Bhv" firstAttribute="leading" secondItem="kbe-Ej-OqV" secondAttribute="leading" constant="25" id="ao1-Pa-evt"/>
+                    <constraint firstItem="Ivg-r8-Bhv" firstAttribute="centerY" secondItem="kbe-Ej-OqV" secondAttribute="centerY" id="k2y-8R-vVV"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Gor-5r-pPk" secondAttribute="trailing" constant="10" id="mbA-kk-FQa"/>
+                    <constraint firstItem="Gor-5r-pPk" firstAttribute="top" secondItem="kbe-Ej-OqV" secondAttribute="top" constant="10" id="ufd-zU-99n"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="VEm-Ht-Z23"/>
+            <connections>
+                <outlet property="dateLabel" destination="GGR-Il-opD" id="Vkw-EV-iOS"/>
+                <outlet property="detailsLabel" destination="Gor-5r-pPk" id="g14-5y-k3g"/>
+                <outlet property="iconView" destination="Ivg-r8-Bhv" id="7Mw-xy-fHg"/>
+            </connections>
+            <point key="canvasLocation" x="52.799999999999997" y="58.920539730134934"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="un_answered_call" width="35" height="33"/>
+    </resources>
+</document>

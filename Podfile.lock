@@ -1,0 +1,155 @@
+PODS:
+  - ActiveLabel (1.1.0)
+  - AirNetwork (1.2.3)
+  - Alamofire (4.8.2)
+  - AlamofireNetworkActivityIndicator (2.4.0):
+    - Alamofire (~> 4.8)
+  - AppsFlyerFramework (4.10.0)
+  - ASPVideoPlayer (6.0.0)
+  - Crashlytics (3.13.1):
+    - Fabric (~> 1.10.1)
+  - Device.swift (1.2.2)
+  - Fabric (1.10.1)
+  - FBSDKCoreKit (5.0.1):
+    - FBSDKCoreKit/Basics (= 5.0.1)
+    - FBSDKCoreKit/Core (= 5.0.1)
+  - FBSDKCoreKit/Basics (5.0.1)
+  - FBSDKCoreKit/Core (5.0.1):
+    - FBSDKCoreKit/Basics
+  - FBSDKLoginKit (5.0.1):
+    - FBSDKCoreKit (~> 5.0)
+  - GoogleSignIn (4.4.0):
+    - "GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)"
+    - "GoogleToolboxForMac/NSString+URLArguments (~> 2.1)"
+    - GTMSessionFetcher/Core (~> 1.1)
+  - GoogleToolboxForMac/DebugUtils (2.2.1):
+    - GoogleToolboxForMac/Defines (= 2.2.1)
+  - GoogleToolboxForMac/Defines (2.2.1)
+  - "GoogleToolboxForMac/NSDictionary+URLArguments (2.2.1)":
+    - GoogleToolboxForMac/DebugUtils (= 2.2.1)
+    - GoogleToolboxForMac/Defines (= 2.2.1)
+    - "GoogleToolboxForMac/NSString+URLArguments (= 2.2.1)"
+  - "GoogleToolboxForMac/NSString+URLArguments (2.2.1)"
+  - GTMSessionFetcher/Core (1.2.2)
+  - IQKeyboardManagerSwift (6.3.0)
+  - JTMaterialSwitch (1.1)
+  - JWTDecode (2.3.0)
+  - Kingfisher (5.5.0)
+  - KUIPopOver (1.1.2)
+  - Localize (2.1.0)
+  - MarqueeLabel (4.0.0)
+  - MGSwipeTableCell (1.6.8)
+  - Mixpanel (3.4.5)
+  - MulticastDelegateSwift (2.1.4)
+  - NotificationBannerSwift (2.2.0):
+    - MarqueeLabel (~> 4.0.0)
+    - SnapKit (~> 5.0.0)
+  - OpenTok (2.16.1)
+  - ReachabilitySwift (4.3.1)
+  - SnapKit (5.0.0)
+  - Socket.IO-Client-Swift (13.2.1):
+    - Starscream (~> 3.0.2)
+  - Starscream (3.0.6)
+  - SVProgressHUD (2.2.5)
+  - UIWindowTransition (1.2)
+
+DEPENDENCIES:
+  - ActiveLabel
+  - AirNetwork
+  - Alamofire
+  - AlamofireNetworkActivityIndicator (~> 2.2)
+  - AppsFlyerFramework
+  - ASPVideoPlayer
+  - Crashlytics
+  - Device.swift
+  - Fabric
+  - FBSDKLoginKit
+  - GoogleSignIn
+  - IQKeyboardManagerSwift
+  - JTMaterialSwitch
+  - JWTDecode
+  - Kingfisher (~> 5.0)
+  - KUIPopOver
+  - Localize (~> 2.1.0)
+  - MGSwipeTableCell
+  - Mixpanel
+  - MulticastDelegateSwift
+  - NotificationBannerSwift
+  - OpenTok
+  - ReachabilitySwift
+  - Socket.IO-Client-Swift (~> 13.2.0)
+  - SVProgressHUD
+  - UIWindowTransition
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - ActiveLabel
+    - AirNetwork
+    - Alamofire
+    - AlamofireNetworkActivityIndicator
+    - AppsFlyerFramework
+    - ASPVideoPlayer
+    - Crashlytics
+    - Device.swift
+    - Fabric
+    - FBSDKCoreKit
+    - FBSDKLoginKit
+    - GoogleSignIn
+    - GoogleToolboxForMac
+    - GTMSessionFetcher
+    - IQKeyboardManagerSwift
+    - JTMaterialSwitch
+    - JWTDecode
+    - Kingfisher
+    - KUIPopOver
+    - Localize
+    - MarqueeLabel
+    - MGSwipeTableCell
+    - Mixpanel
+    - MulticastDelegateSwift
+    - NotificationBannerSwift
+    - OpenTok
+    - ReachabilitySwift
+    - SnapKit
+    - Socket.IO-Client-Swift
+    - Starscream
+    - SVProgressHUD
+    - UIWindowTransition
+
+SPEC CHECKSUMS:
+  ActiveLabel: 5e3f4de79a1952d4604b845a0610d4776e4b82b3
+  AirNetwork: 3170482e7b265faed7a28478eceafedfad575915
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  AlamofireNetworkActivityIndicator: 9acc3de3ca6645bf0efed462396b0df13dd3e7b8
+  AppsFlyerFramework: d356c24fa0653bfa518b09613f6b46e980600e90
+  ASPVideoPlayer: fb3d49a1deb819c5fa093668c81fe9870750a766
+  Crashlytics: 5aa8e90dcbf2f34898b4f5a0037787531246cca0
+  Device.swift: 3f93632bb3fa3e4ebb9b202563975177e17c4296
+  Fabric: f6f21452846788bb44595d73e9909d79d328e617
+  FBSDKCoreKit: 4a19534474ade7c71bd016d800aa5e7722bcdda1
+  FBSDKLoginKit: 41efa754b909b0ea813fa9a8596dacc8ed196d50
+  GoogleSignIn: 7ff245e1a7b26d379099d3243a562f5747e23d39
+  GoogleToolboxForMac: b3553629623a3b1bff17f555e736cd5a6d95ad55
+  GTMSessionFetcher: 61bb0f61a4cb560030f1222021178008a5727a23
+  IQKeyboardManagerSwift: a8228c257614af98743b4cd8584637025f36358f
+  JTMaterialSwitch: cad8093c3773ff9f6c60005c98d269eb869b5e04
+  JWTDecode: fb77675c8049c1a7e9433c7cf448c3ce33ee4ac7
+  Kingfisher: 6fe5e67a90fd335e49b0f5c075ff55ac5ebedd94
+  KUIPopOver: fc7ccb3c1c1ada51f5251477a7993ec452e3eefb
+  Localize: f360a343abfac047be5b375c45be1059f5f625f3
+  MarqueeLabel: b55b26e690b6ad41faedd95cbf5eae6f1d1735b4
+  MGSwipeTableCell: dc4eca3212ed38a563b27d6aa7b3c01ce656c1e2
+  Mixpanel: 85c865c57456de42f66d7c29cd1b060b41ebe279
+  MulticastDelegateSwift: 84c42e7a0a31385d8222bbbb4c89bcdb00cb5f4d
+  NotificationBannerSwift: 0ebb4b35e18c0515fdfe01b5ebd90c3eb1255e3d
+  OpenTok: 556374577b66cbf791190c84612346c8f3997c9e
+  ReachabilitySwift: 4032e2f59586e11e3b0ebe15b167abdd587a388b
+  SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
+  Socket.IO-Client-Swift: b94943e2fb916fe2f95244b9ed21828634002280
+  Starscream: ef3ece99d765eeccb67de105bfa143f929026cf5
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  UIWindowTransition: cb4a8e107293ce90c7fca9462f7a9c185869df80
+
+PODFILE CHECKSUM: f0455cecc00c3b8e0a72035712e66ae091b84ad2
+
+COCOAPODS: 1.5.3

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Display-Regular.otf">
+            <string>SFProDisplay-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BigOptionSegment" customModule="HipWig" customModuleProvider="target">
+            <connections>
+                <outlet property="leftButton" destination="fN5-Rs-XZm" id="xML-62-tuj"/>
+                <outlet property="rightButton" destination="vJe-oz-6sc" id="ig6-Ww-F9F"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cPU-WV-HNh">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fN5-Rs-XZm">
+                            <rect key="frame" x="0.0" y="0.0" width="177.5" height="120"/>
+                            <color key="backgroundColor" red="0.27424290779999999" green="0.29487788679999999" blue="0.38012874130000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
+                            <state key="normal" title="Need advice" image="advice_icon"/>
+                            <state key="selected" image="advice_selected_icon"/>
+                            <connections>
+                                <action selector="optionButtonDidPressedWithSender:" destination="-1" eventType="touchUpInside" id="e4c-Hu-To4"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vJe-oz-6sc">
+                            <rect key="frame" x="197.5" y="0.0" width="177.5" height="120"/>
+                            <color key="backgroundColor" red="0.27424290779999999" green="0.29487788679999999" blue="0.38012874130000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <fontDescription key="fontDescription" name="SFProDisplay-Regular" family="SF Pro Display" pointSize="16"/>
+                            <state key="normal" title="Someone to talk"/>
+                            <connections>
+                                <action selector="optionButtonDidPressedWithSender:" destination="-1" eventType="touchUpInside" id="YKZ-nX-im4"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="120" id="vTj-0B-r1U"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="tXF-rw-bG1"/>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="cPU-WV-HNh" secondAttribute="trailing" id="1r3-kv-rhV"/>
+                <constraint firstItem="cPU-WV-HNh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="4Yp-tQ-Lfc"/>
+                <constraint firstItem="cPU-WV-HNh" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="Odc-1h-2Pw"/>
+                <constraint firstItem="cPU-WV-HNh" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="QhE-mt-v3C"/>
+            </constraints>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="advice_icon" width="21" height="21"/>
+        <image name="advice_selected_icon" width="21" height="21"/>
+    </resources>
+</document>

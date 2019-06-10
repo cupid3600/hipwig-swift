@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.99" systemVersion="18D109" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ManagedDialog" representedClassName="ManagedDialog" syncable="YES">
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="unreadMesageCount" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="lastMessage" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="ManagedMessage" syncable="YES"/>
+        <relationship name="me" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="ManagedUser" syncable="YES"/>
+        <relationship name="messages" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ManagedMessage" inverseName="dialog" inverseEntity="ManagedMessage" syncable="YES"/>
+        <relationship name="opponent" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="ManagedUser" syncable="YES"/>
+    </entity>
+    <entity name="ManagedExpert" representedClassName="ManagedExpert" syncable="YES">
+        <attribute name="available" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="clients" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="followers" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isPublic" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="paypalAccount" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="profileImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="profileVideo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="workTypeValue" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="skills" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ManagedExpertSkill" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="ManagedUser" inverseName="expert" inverseEntity="ManagedUser" syncable="YES"/>
+    </entity>
+    <entity name="ManagedExpertSkill" representedClassName="ManagedExpertSkill" syncable="YES">
+        <attribute name="defaultImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="selectedImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="ManagedMessage" representedClassName="ManagedMessage" syncable="YES">
+        <attribute name="createDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="dialogId" attributeType="String" syncable="YES"/>
+        <attribute name="id" attributeType="String" syncable="YES"/>
+        <attribute name="message" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sender" attributeType="String" syncable="YES"/>
+        <attribute name="systemMessageValue" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="dialog" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="ManagedDialog" inverseName="messages" inverseEntity="ManagedDialog" syncable="YES"/>
+    </entity>
+    <entity name="ManagedReviewComment" representedClassName="ManagedReviewComment" syncable="YES">
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ManagedUser" inverseName="reviews" inverseEntity="ManagedUser" syncable="YES"/>
+    </entity>
+    <entity name="ManagedUser" representedClassName="ManagedUser" syncable="YES">
+        <attribute name="availableTime" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="blocked" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isAvailable" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="isSubscribed" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="profileImage" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="roleValue" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="subscribedTo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wasBlocked" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="expert" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="ManagedExpert" inverseName="user" inverseEntity="ManagedExpert" syncable="YES"/>
+        <relationship name="reviews" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ManagedReviewComment" inverseName="user" inverseEntity="ManagedReviewComment" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ManagedDialog" positionX="-54" positionY="27" width="128" height="135"/>
+        <element name="ManagedExpert" positionX="-36" positionY="117" width="128" height="240"/>
+        <element name="ManagedExpertSkill" positionX="0" positionY="171" width="128" height="105"/>
+        <element name="ManagedMessage" positionX="-63" positionY="-18" width="128" height="165"/>
+        <element name="ManagedReviewComment" positionX="-18" positionY="126" width="128" height="75"/>
+        <element name="ManagedUser" positionX="-45" positionY="54" width="128" height="240"/>
+    </elements>
+</model>
